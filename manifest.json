@@ -3,8 +3,8 @@
     "header": {
         "description": "Original pack by : RobotPantaloons
 Remaked by : Nobberu",
-        "name": "BareBones PBR Remake [Osbes/Nori]",
-        "uuid": "ffe5685c-06bc-419b-9289-648f43495bba",
+        "name": "Bare Bones PBR Remake [Yssbe]",
+        "uuid": "38c95436-9b44-4913-8e75-3050d753952f",
         "version": [1, 0, 0]
     },
     "modules": [
@@ -12,7 +12,7 @@ Remaked by : Nobberu",
             "description": "Original pack by : RobotPantaloons
 Remaked by : Nobberu",
             "type": "resources",
-            "uuid": "80da4c3d-a429-4199-a761-3433c147b143",
+            "uuid": "d36e19aa-c978-484e-88d5-975320ecd790",
             "version": [1, 0, 0]
         }
     ],
