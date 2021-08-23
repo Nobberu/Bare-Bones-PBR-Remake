@@ -1,0 +1,287 @@
+
+
+
+
+#define sunlight vec3(250.0/255.0,235.0/255.0,170.0/255.0)*2.6
+#define moonlight vec3(100.0/255.0,140.0/255.0,180.0/255.0)*0.6
+#define dusklight vec3(250.0/255.0,155.0/255.0,80.0/255.0)*1.8
+//光照颜色修改区
+//Sunlight color
+
+
+#define daydif vec3(140.0/255.0,205.0/255.0,230.0/255.0)*1.1
+#define duskdif vec3(0.1,0.2,0.4)
+#define nightdif vec3(0.03,0.08,0.12)
+//天空散射光(即阴影颜色)
+//The sky scatters light color
+
+
+#define raindif vec3(0.4,0.4,0.4)
+//雨天散射光
+//On a rainy day the sky scatters the color of light
+
+
+#define lightcolor vec3(1.0,0.38,0.12)*9.0
+//光源颜色修改区
+//Color of light source
+
+
+#define waterc vec4(40.0/255.0,103.0/255.0,155.0/255.0,0.6)
+//水面颜色修改区
+//Water surface color and transparency
+
+
+#define daysky vec4(vec3(68.0/255.0,99.0/255.0,128.0/255.0)*1.1,1.0)
+#define nightsky vec4(0.05,0.2,0.35,2.0)
+#define dusksky vec4(56.0/255.0,76.0/255.0,106.0/255.0,1.0)
+#define rainsky vec4(0.4,0.4,0.4,0.5)
+//天空颜色修改区
+//The sky color
+
+#define dayclouddir vec4(vec3(252.0/255.0,248.0/255.0,215.0/255.0)*0.75,1.0)
+#define nightclouddir vec4(0.5,0.75,0.9,0.5)
+#define duskclouddir vec4(285.0/255.0,160.0/255.0,60.0/255.0,1.0)
+#define rainclouddir vec4(0.5,0.5,0.5,1.0)
+//云层直射光修改区
+//The clouds give direct light
+
+
+#define dayclouddif vec4(vec3(254.0/255.0,248.0/255.0,215.0/255.0)*0.7,1.0)
+#define nightclouddif vec4(0.5,0.75,0.9,0.5)*0.3
+#define duskclouddif vec4(285.0/255.0,160.0/255.0,60.0/255.0,1.0)*0.3
+#define rainclouddif vec4(0.5,0.5,0.5,1.0)*0.6
+//云层散射光修改区
+//Cloud scattered light
+
+
+
+
+#define daysunc vec4(1.8,1.4,1.0,1.0)*1.5
+#define dusksunc vec4(1.8,1.0,0.1,1.0)*1.5
+#define moonc vec4(1.15,1.1,1.0,1.0)*1.5
+//日月颜色修改区
+//The colors of the sun and moon
+
+
+#define daysmc vec4(vec3(104.0/255.0,137.0/255.0,153.0/255.0)*1.1,1.0)
+#define dusksmc vec4(1.2,0.8,0.25,1.0)
+#define nightsmc vec4(0.5,0.6,0.7,1.0)
+//天际线颜色上端修改区
+//The upper color of the skyline
+
+
+#define dayslc vec4(vec3(150.0/255.0,168.0/255.0,156.0/255.0),1.0)
+//#define dayslc vec4(vec3(1.0,0.99,0.98)*0.95,1.0)
+#define duskslc vec4(1.4,0.8,0.0,1.0)
+#define nightslc vec4(0.4,0.6,0.7,1.0)
+//天际线颜色修改区
+//Skyline color
+
+
+#define dayslbc vec4(vec3(104.0/255.0,143.0/255.0,153.0/255.0),1.0)
+#define duskslbc vec4(1.0,0.5,0.2,1.0)
+#define nightslbc vec4(0.1,0.5,0.65,1.0)
+//天际线底部颜色修改区
+//The bottom color of the skyline
+
+
+#define daysbc vec4(vec3(65.0/255.0,93.0/255.0,110.0/255.0),1.0)
+#define dusksbc vec4(0.41,0.4,0.4,1.0)
+#define nightsbc vec4(0.1,0.2,0.35,1.0)
+//天空底部颜色修改区
+//Sky bottom color
+
+
+#define dayfog vec4(vec3(60.0/255.0,140.0/255.0,170.0/255.0)*0.8,1.0)
+#define duskfog vec4(0.8,0.4,0.2,1.0)
+#define nightfog vec4(vec3(0.05,0.2,0.35),1.0)
+#define rainfog vec4(0.3,0.3,0.3,1.0)
+//雾气颜色修改区
+//fog color
+
+
+
+/*******全局参数调整******/
+
+#define GAMMA 2.0
+//gamma修正
+
+#define SAT 1.0
+//饱和度，越大越鲜艳
+//saturability
+
+
+#define TIME_CHECK_TYPE 0
+//时间检测方案
+//0:世界光照颜色检测方案，时间可以对的上，但会频闪，可能抬头换天
+//1:雾颜色检测方案，时间不能完全对准但可以平滑过渡，且没有以上问题
+//1方案来自origin shader作者lin
+
+/*****天空选项*******/
+
+//#define TEXTURECLOUD 
+//贴图云开关,开启则使用天空盒贴图
+
+
+
+//#define BLVCLOUD //方块体积云 
+#define N2DCLOUD //传统2D云
+//#define BL2DCLOUD //2D方块云
+//云类型 
+//"在"#"前面"//"关闭云,
+
+
+
+#define COMENT
+//流星开关
+
+#define STARS
+//星星开关
+
+
+#define CLOUDTHICK 0.0
+//方块体积云厚度(越厚计算量越大越卡,包括水面云反在内)(低配机关闭云的同时请把该值改为0.0)
+
+
+
+#define SKYLINEP1 -0.2
+#define SKYLINEP2 0.0
+
+#define SKYLINEP3 -0.06
+#define SKYLINEP4 0.0
+
+#define SKYLINEP5 -0.05
+#define SKYLINEP6 0.15
+
+#define SKYLINEP7 -0.2
+#define SKYLINEP8 0.7
+
+//天空分层过渡
+
+
+
+
+/*********方块选项*********/
+
+
+
+/*-----*四合一pbr材质包支持*---*/
+
+#define FOUR_IN_ONE_PBRTEX
+//四合一pbr总开关 前面加上 //  表示关闭
+/*
+实验功能,在开启该开关时请将pbr材质包置于YSS之前优先加载
+将会读取pbr材质中方块的物理信息
+反射及性质由材质包中的pbr贴图决定
+*/
+
+
+#define RESOLVING_POWER 32.0
+//pbr贴图分辨率 如16x材质填写16.0 128x材质填写128.0
+
+
+/**pbr参数与贴图颜色的对应方式**/
+/*
+RN(roughness)代表粗糙度, 
+ML(metallic)代表金属度,
+SM(shinemap)代表自发光
+AM代表环境光遮蔽强度
+
+TEX1代表读取的pbr贴图颜色,
+后面接r,g,b,a代表读取的通道
+*/
+#define RN 1.0-TEX1.r
+//粗糙度
+#define ML TEX1.g
+//金属度
+#define SM 0.9960784314-TEX1.a
+//自发光
+#define AM TEX1.b
+//环境光遮蔽
+
+
+#define PARALLAX
+//四合一贴图视差开关
+//高度图储存于法线贴图的alpha通道内
+
+
+#define PARALLAX_DEEP 0.4
+//视差深度调整 0.2-1.0,越大越深，
+//单位长度为一个方块宽度
+
+
+#define PARALLAX_SHADOWMAPSWICH
+//视差阴影开关
+
+
+#define PARALLAX_SHADOW_STEP_LENGTH 0.005
+//视差步进长度 
+
+
+
+
+
+
+#define NORNALMAP
+//读取法线贴图开关
+
+
+#define PBRMAP
+//读取pbr贴图开关
+//关闭则使用默认pbr参数
+
+
+
+
+/*-------透明度pbr标准参数调整--------*/
+/*通过获取材质透明度预先编码物理性质*/
+
+
+//#define OVERALLNORMAL
+//全局法线开关
+
+
+#define NORMAL_DEEP 0.004
+//法线设定深度
+
+
+#define NORMAL_DELTA 0.8
+//算法法线采样距离，以一个像素点的长宽为单位
+
+
+#define EVENREFLECTION 
+//全局反射选项 
+//关闭则直接反射天空颜色(对配置要求低) 
+//开启会反射天空景物
+
+
+#define NORMALTYPE 1
+/*
+水面法线波纹类型
+0或直接"//":无任何水波; 
+1 算法动态水波;(对配置要求较高)
+2 读取当前水面法线贴图(建议搭配材质包使用)
+3 读取当前水面贴图的灰度图进行法线图生成计算充当法线,
+类似RTX官方光追水面(对配置要求低)
+建议原版水或材质包贴图水面(不推荐使用法线贴图)
+ps:水面pbr参数默认非金属极光滑表面
+*/
+
+
+//#define WATERTEX
+//是否使用水面贴图作为水颜色 
+
+
+
+
+/**********其他相关选项***********/
+//(及阴间特效)
+
+
+//#define PLANTWAVE
+//植物晃动开关
+
+
+
+
+
