@@ -1,5 +1,5 @@
 {
-  "resource_pack_name": "Naza",
+  "resource_pack_name": "Bare Bones PBR Remake",
   "texture_name": "atlas.terrain",
   "padding": 0,
   "num_mip_levels": 4,
@@ -78,6 +78,7 @@
       ]
     },
     "grass_top": {
+      "quad":1,
       "textures": [
         "textures/blocks/grass_top",
         "textures/blocks/grass_top",
@@ -1402,11 +1403,9 @@
       "textures": "textures/blocks/rail_detector_powered"
     },
     "rail_activator": {
-     "quad":1,
       "textures": "textures/blocks/rail_activator"
     },
     "rail_activator_powered": {
-     "quad":1,
       "textures": "textures/blocks/rail_activator_powered"
     },
     "bed_bottom": {
